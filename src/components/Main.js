@@ -5,29 +5,60 @@ import Typography from "@material-ui/core/Typography";
 import Instagram from "./Instagram";
 
 const styles = {
-  root: {
-    flexGrow: 1
-  },
   mainContainer: {
-    maxWidth: "1200px",
+    "@media (min-width: 600px)": {
+      padding: "16px"
+    }
+  },
+  mainItem: {
+    maxWidth: "900px",
     margin: "0 auto",
     marginTop: "3rem"
+  },
+  innerContainer: {
+    "@media (min-width: 600px)": {
+      flexDirection: "row",
+      alignItems: "stretch",
+      justifyContent: "space-between"
+    }
+  },
+  instagram: {
+    "& > h1:hover": {
+      cursor: "pointer",
+      color: "#000"
+    },
+    marginBottom: "24px",
+    "@media (min-width: 900px)": {
+      marginBottom: "0px",
+      paddingTop: "0px",
+      paddingBottom: "0px"
+    }
   }
 };
 
 function Main(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
-      <Grid container spacing={32}>
-        <Grid item xs={11} md={6} className={classes.mainContainer}>
-          <Typography variant="headline" gutterBottom>
-            Instagram
-          </Typography>
-          <Instagram />
+    <Grid container className={classes.mainContainer}>
+      <Grid item xs={12} md={8} className={classes.mainItem}>
+        <Grid
+          container
+          direction="column"
+          alignItems="flex-start"
+          alignContent="space-between"
+          className={classes.innerContainer}
+        >
+          <Grid item className={classes.instagram}>
+            <Typography variant="display1" gutterBottom inline>
+              Instagram
+            </Typography>
+          </Grid>
+          <Grid item className={classes.instagram}>
+            <Instagram />
+          </Grid>
         </Grid>
       </Grid>
-    </div>
+    </Grid>
   );
 }
 

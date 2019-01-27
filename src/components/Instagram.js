@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Avatar from "@material-ui/core/Avatar";
+import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
 import {
@@ -13,12 +15,13 @@ import {
   Share,
   MessageCircle,
   Bookmark,
-  ChevronDown
+  MoreHorizontal
 } from "react-feather";
 
 const styles = {
   card: {
-    maxWidth: "614px"
+    maxWidth: "614px",
+    margin: "0 auto"
   },
   media: {
     height: "400px"
@@ -27,6 +30,7 @@ const styles = {
     marginLeft: "auto"
   },
   actions: {
+    paddingTop: "16px",
     paddingLeft: "8px",
     paddingRight: "8px"
   },
@@ -49,7 +53,8 @@ const styles = {
     marginTop: "24px"
   },
   expand: {
-    marginLeft: "280px"
+    marginLeft: "auto",
+    marginTop: "2px"
   }
 };
 
@@ -64,36 +69,26 @@ class Instagram extends Component {
   }
 
   componentDidMount() {
-    axios
-      .all([
-        axios.get(`https://jsonplaceholder.typicode.com/users/1`),
-        axios.get(`https://jsonplaceholder.typicode.com/photos/6`)
-      ])
-      .then(
-        axios.spread((usersRes, photosRes) => {
-          // Both requests are now complete
-          console.log(usersRes);
-          const users = usersRes.data;
-          const photos = photosRes.data;
-          this.setState({ users: users, photos: photos });
-        })
-      );
+    axios.get(`https://uinames.com/api/?ext`).then(usersRes => {
+      // Both requests are now complete
+      console.log(usersRes);
+      const users = usersRes.data;
+      this.setState({ users: users });
+    });
   }
 
   render() {
     const { classes } = this.props;
-    const { users, photos } = this.state;
+    const { users } = this.state;
     console.log(users);
     return (
-      <Card className={classes.card}>
+      <Card className={classes.card} raised>
         <CardHeader
-          avatar={
-            <Avatar aria-label="Profile Photo" src={photos.thumbnailUrl} />
-          }
+          avatar={<Avatar aria-label="Profile Photo" src={users.photo} />}
           title={users.name}
-          subheader={users.website}
+          subheader={users.region}
         />
-        <CardMedia className={classes.media} image={photos.url} />
+        <CardMedia className={classes.media} image={users.photo} />
         <CardActions className={classes.actions}>
           <Heart />
           <MessageCircle />
@@ -102,7 +97,7 @@ class Instagram extends Component {
         </CardActions>
         <CardContent>
           <Typography variant="inherit" gutterBottom className={classes.likes}>
-            31 likes
+            30,516 likes
           </Typography>
           <Typography variant="subtitle1" className={classes.names}>
             {users.name}
@@ -116,10 +111,20 @@ class Instagram extends Component {
             for newer experiences
           </Typography>
           <hr className={classes.hr} />
-          <Typography variant="body1" className={classes.comment}>
-            Add a comment...
-          </Typography>
-          <ChevronDown className={classes.expand} />
+          <Grid
+            container
+          >
+            <Grid item>
+              <Typography variant="body1" className={classes.comment}>
+                Add a comment...
+              </Typography>
+            </Grid>
+            <Grid item className={classes.expand}>
+              <IconButton>
+                <MoreHorizontal />
+              </IconButton>
+            </Grid>
+          </Grid>
         </CardContent>
       </Card>
     );

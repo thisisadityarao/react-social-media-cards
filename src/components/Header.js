@@ -7,16 +7,17 @@ import Link from "@material-ui/core/Link";
 
 const styles = {
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    zIndex: "99"
   },
   toolbar: {
     display: "flex",
     justifyContent: "center"
   },
   link: {
-    color: "#3B92DE",
+    color: "#001513",
     "&:hover": {
-      color: "#2196F3",
+      color: "#2196F3"
     }
   }
 };
