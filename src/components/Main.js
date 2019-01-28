@@ -23,9 +23,13 @@ const styles = {
     }
   },
   instagram: {
+    "& > h1": {
+      color: "#fff"
+    },
     "& > h1:hover": {
       cursor: "pointer",
-      color: "#000"
+      color: "#F9A800",
+      borderBottom: "3px solid #F9A800"
     },
     marginBottom: "24px",
     "@media (min-width: 900px)": {

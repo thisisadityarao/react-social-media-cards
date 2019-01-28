@@ -9,7 +9,8 @@ const styles = {
     width: "100%",
     height: "100%",
     minHeight: "100vh",
-    backgroundColor: "#F9A800"
+    backgroundColor: "#fff",
+    backgroundImage: "linear-gradient(-135deg,#1400c8,#b900b4,#f50000)",
   }
 };
 class App extends Component {
