@@ -4,20 +4,28 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
+import grey from "@material-ui/core/colors/grey";
+import blue from "@material-ui/core/colors/blue";
+
+const appBar = grey[50];
+const text = grey[900];
+const linkHover = blue[700];
 
 const styles = {
   root: {
     flexGrow: 1,
-    zIndex: "99"
+    zIndex: "99",
+    boxShadow: "0 2px 4px 0 rgba(0,0,0,.1)",
+    backgroundColor: appBar
   },
   toolbar: {
     display: "flex",
     justifyContent: "center"
   },
   link: {
-    color: "#001513",
+    color: text,
     "&:hover": {
-      color: "#2196F3"
+      color: linkHover
     }
   }
 };
@@ -26,7 +34,7 @@ function Header(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="relative" classes={{ root: classes.root }}>
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" color="inherit">
             <Link href={"/"} underline="none" className={classes.link}>
