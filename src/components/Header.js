@@ -7,9 +7,9 @@ import Link from "@material-ui/core/Link";
 import grey from "@material-ui/core/colors/grey";
 import blue from "@material-ui/core/colors/blue";
 
-const appBar = grey[50];
-const text = grey[900];
-const linkHover = blue[700];
+const appBar = grey[900];
+const text = grey[50];
+const linkHover = blue[300];
 
 const styles = {
   root: {
@@ -36,7 +36,7 @@ function Header(props) {
     <div className={classes.root}>
       <AppBar position="relative" classes={{ root: classes.root }}>
         <Toolbar className={classes.toolbar}>
-          <Typography variant="h6" color="inherit">
+          <Typography variant="h1" color="inherit">
             <Link href={"/"} underline="none" className={classes.link}>
               Social Media Cards
             </Link>

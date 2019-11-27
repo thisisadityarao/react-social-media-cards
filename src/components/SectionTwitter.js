@@ -6,7 +6,7 @@ import React from "react";
 import lightBlue from "@material-ui/core/colors/lightBlue";
 import grey from "@material-ui/core/colors/grey";
 
-const containerBackground = lightBlue['A100'];
+const containerBackground = lightBlue['A400'];
 const text = grey[900];
 
 const styles = {
@@ -55,7 +55,7 @@ function SectionTwitter(props) {
           className={classes.innerContainer}
         >
           <Grid item className={classes.twitter}>
-            <Typography variant="display1" gutterBottom inline>
+            <Typography variant="h2" gutterBottom inline>
               Twitter
             </Typography>
           </Grid>

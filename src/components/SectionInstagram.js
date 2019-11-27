@@ -4,10 +4,9 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 import Instagram from "./Instagram";
 import grey from "@material-ui/core/colors/grey";
-import red from "@material-ui/core/colors/red";
 
 const text = grey[900];
-const containerBackground = red['A100'];
+const containerBackground = grey[50];
 
 const styles = {
   mainContainer: {
@@ -55,7 +54,7 @@ function SectionInstagram(props) {
           className={classes.innerContainer}
         >
           <Grid item className={classes.instagram}>
-            <Typography variant="display1" gutterBottom inline>
+            <Typography variant="h2" gutterBottom inline>
               Instagram
             </Typography>
           </Grid>

@@ -15,9 +15,7 @@ import BookmarkButton from "./BookmarkButton";
 import HeartButton from "./HeartButton";
 
 import axios from "axios";
-import {
-  MessageCircle
-} from "react-feather";
+import { MessageCircle } from "react-feather";
 
 const styles = {
   card: {
@@ -68,7 +66,7 @@ const styles = {
   }
 };
 
-class Instagram extends Component {
+class Twitter extends Component {
   constructor(props) {
     super(props);
 
@@ -138,4 +136,4 @@ class Instagram extends Component {
   }
 }
 
-export default withStyles(styles)(Instagram);
+export default withStyles(styles)(Twitter);
