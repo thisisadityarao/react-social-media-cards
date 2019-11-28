@@ -1,24 +1,25 @@
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
+import Twitter from "./Twitter";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
-import Instagram from "./Instagram";
+import lightBlue from "@material-ui/core/colors/lightBlue";
 import grey from "@material-ui/core/colors/grey";
 
+const containerBackground = lightBlue['A200'];
 const text = grey[900];
-const containerBackground = grey[50];
 
 const styles = {
   mainContainer: {
     width: "100vw",
-    minHeight: "100vh",
+    height: "100vh",
     display: "flex",
     backgroundColor: containerBackground
   },
   mainItem: {
     maxWidth: "900px",
     margin: "0 auto",
-    marginTop: "3rem"
+    marginTop: "4rem"
   },
   innerContainer: {
     "@media (min-width: 600px)": {
@@ -27,7 +28,7 @@ const styles = {
       justifyContent: "space-between"
     }
   },
-  instagram: {
+  twitter: {
     "& > h1": {
       color: text,
       borderBottom: `3px solid ${text}`
@@ -41,7 +42,7 @@ const styles = {
   }
 };
 
-function SectionInstagram(props) {
+function SectionTwitter(props) {
   const { classes } = props;
   return (
     <Grid container className={classes.mainContainer}>
@@ -53,13 +54,13 @@ function SectionInstagram(props) {
           alignContent="space-between"
           className={classes.innerContainer}
         >
-          <Grid item className={classes.instagram}>
+          <Grid item className={classes.twitter}>
             <Typography variant="h2" gutterBottom inline>
-              Instagram
+              Twitter
             </Typography>
           </Grid>
-          <Grid item className={classes.instagram}>
-            <Instagram />
+          <Grid item className={classes.twitter}>
+            <Twitter />
           </Grid>
         </Grid>
       </Grid>
@@ -67,4 +68,4 @@ function SectionInstagram(props) {
   );
 }
 
-export default withStyles(styles)(SectionInstagram);
+export default withStyles(styles)(SectionTwitter);

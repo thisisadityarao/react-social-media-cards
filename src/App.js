@@ -1,8 +1,8 @@
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
 import Header from "./components/Header";
-import SectionInstagram from "./components/SectionInstagram";
-import SectionTwitter from "./components/SectionTwitter";
+import SectionInstagram from "./components/Instagram/SectionInstagram";
+import SectionTwitter from "./components/Twitter/SectionTwitter";
 import grey from "@material-ui/core/colors/grey";
 
 const containerColor = grey[100];

@@ -13,9 +13,14 @@ function HeartButton() {
         disableRipple
         size="small"
         color="inherit"
-        onClick={() => setLike(!like)}
+        onClick={() =>
+          setLike(!like)}
       >
-        {like ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon />}
+        {like ? (
+          <FavoriteIcon color="error" />
+        ) : (
+          <FavoriteBorderIcon />
+        )}
       </IconButton>
     </>
   );
