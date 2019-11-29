@@ -7,7 +7,7 @@ import Link from "@material-ui/core/Link";
 import grey from "@material-ui/core/colors/grey";
 import blue from "@material-ui/core/colors/blue";
 
-const appBar = grey[900];
+const appBar = blue[900];
 const text = grey[50];
 const linkHover = blue[300];
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
+import Grid from "@material-ui/core/Grid";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
@@ -19,19 +20,24 @@ const text = grey[600];
 const styles = {
   card: {
     maxWidth: "598px",
-    margin: "0 auto"
+    margin: "0 auto",
+    paddingRight: "4px",
+    paddingLeft: "4px"
   },
   header: {
     paddingBottom: "0"
   },
   content: {
     paddingTop: "0",
-    paddingLeft: "70px"
+    marginLeft: "9%"
   },
   actions: {
     paddingTop: "0",
-    paddingLeft: "70px",
     display: "flex",
+    justifyContent: "space-evenly"
+  },
+    icons: {
+    flex: "1",
   },
   region: {
     marginLeft: "6px",
@@ -44,10 +50,6 @@ const styles = {
   },
   paragraph: {
     display: "inline"
-  },
-  icons: {
-    flex: "1",
-    marginRight: "10px"
   }
 };
 
@@ -80,52 +82,66 @@ class Twitter extends Component {
     console.log(users);
     return (
       <Card className={classes.card} raised>
-        <CardHeader
-          className={classes.header}
-          disableTypography
-          avatar={<Avatar aria-label="Profile Photo" src={users.photo} />}
-          title={
-            <Typography
-              className={classes.names}
-              variant="subtitle1"
-              display="inline"
-            >
-              {users.name}
-            </Typography>
-          }
-          subheader={
-            <Typography
-              className={classes.region}
-              variant="subtitle1"
-              display="inline"
-            >
-              @{users.region}
-              <span className={classes.region}>&#183;</span>
-              {this.result}h
-            </Typography>
-          }
-          action={
-            <IconButton aria-label="settings" disableRipple disableTouchRipple>
-              <ResponsiveDialog />
-            </IconButton>
-          }
-        />
-        <CardContent className={classes.content}>
-          <Typography
-            variant="body1"
-            gutterBottom
-            className={classes.paragraph}
-          >
-            Saying goodbye is never easy...but essential, for it creates space
-            for newer experiences
-          </Typography>
-        </CardContent>
-        <CardActions className={classes.actions}>
-          <CommentButton className={classes.icons} />
-          <RetweetButton className={classes.icons} />
-          <HeartButton className={classes.icons} />
-          <ShareButton className={classes.icons} />
-        </CardActions>
+        <Grid container direction="column">
+          <Grid item>
+            <CardHeader
+              className={classes.header}
+              disableTypography
+              avatar={<Avatar aria-label="Profile Photo" src={users.photo} />}
+              title={
+                <Typography
+                  className={classes.names}
+                  variant="subtitle1"
+                  display="inline"
+                >
+                  {users.name}
+                </Typography>
+              }
+              subheader={
+                <Typography
+                  className={classes.region}
+                  variant="subtitle1"
+                  display="inline"
+                >
+                  @{users.region}
+                  <span className={classes.region}>&#183;</span>
+                  {this.result}h
+                </Typography>
+              }
+              action={
+                <IconButton
+                  aria-label="settings"
+                  disableRipple
+                  disableTouchRipple
+                >
+                  <ResponsiveDialog />
+                </IconButton>
+              }
+            />
+          </Grid>
+
+          <Grid item>
+            <CardContent className={classes.content}>
+              <Typography
+                variant="body1"
+                gutterBottom
+                className={classes.paragraph}
+              >
+                Saying goodbye is never easy...but essential, for it creates
+                space for newer experiences
+              </Typography>
+            </CardContent>
+          </Grid>
+
+          <Grid item>
+            <CardActions className={classes.actions}>
+              <CommentButton className={classes.icons} />
+              <RetweetButton className={classes.icons} />
+              <HeartButton className={classes.icons} />
+              <ShareButton className={classes.icons} />
+            </CardActions>
+          </Grid>
+        </Grid>
       </Card>
     );
   }

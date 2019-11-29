@@ -6,13 +6,13 @@ import React from "react";
 import lightBlue from "@material-ui/core/colors/lightBlue";
 import grey from "@material-ui/core/colors/grey";
 
-const containerBackground = lightBlue['A200'];
+const containerBackground = lightBlue['A500'];
 const text = grey[900];
 
 const styles = {
   mainContainer: {
     width: "100vw",
-    height: "100vh",
+    height: "50vh",
     display: "flex",
     backgroundColor: containerBackground
   },
