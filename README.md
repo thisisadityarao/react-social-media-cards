@@ -3,7 +3,6 @@
 This project is created for learning React. Specifically learning to interact with API's using React.
 It uses a React UI library - [Material-UI](https://material-ui.com/). API used is [uinames.com](https://uinames.com/).
 
-<hr />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
