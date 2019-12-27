@@ -1,4 +1,7 @@
-This project is created for learning React. Specifically learning to interact with API's using React. It also uses a React UI library - Material-UI
+# React-Social-Media-Cards
+
+This project is created for learning React. Specifically learning to interact with API's using React.
+It uses a React UI library - [Material-UI](https://material-ui.com/). API used is [uinames.com](https://uinames.com/).
 
 <hr />
 

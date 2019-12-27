@@ -21,8 +21,6 @@ const styles = {
   card: {
     maxWidth: "598px",
     margin: "0 auto",
-    paddingRight: "4px",
-    paddingLeft: "4px"
   },
   header: {
     paddingBottom: "0"
@@ -33,15 +31,10 @@ const styles = {
   },
   actions: {
     paddingTop: "0",
-    display: "flex",
-    justifyContent: "space-evenly"
-  },
-    icons: {
-    flex: "1",
   },
   region: {
-    marginLeft: "6px",
-    marginRight: "6px",
+    marginLeft: "1%",
+    marginRight: "1%",
     color: text
   },
   names: {
@@ -135,10 +128,20 @@ class Twitter extends Component {
 
           <Grid item>
             <CardActions className={classes.actions}>
-              <CommentButton className={classes.icons} />
-              <RetweetButton className={classes.icons} />
-              <HeartButton className={classes.icons} />
-              <ShareButton className={classes.icons} />
+              <Grid container justify="space-around" wrap="nowrap">
+                <Grid item>
+                  <CommentButton className={classes.icons} />
+                </Grid>
+                <Grid item>
+                  <RetweetButton className={classes.icons} />
+                </Grid>
+                <Grid item>
+                  <HeartButton className={classes.icons} />
+                </Grid>
+                <Grid item>
+                  <ShareButton className={classes.icons} />
+                </Grid>
+              </Grid>
             </CardActions>
           </Grid>
         </Grid>

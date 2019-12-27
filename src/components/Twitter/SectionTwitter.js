@@ -13,7 +13,6 @@ const styles = {
   mainContainer: {
     width: "100vw",
     height: "50vh",
-    display: "flex",
     backgroundColor: containerBackground
   },
   mainItem: {
